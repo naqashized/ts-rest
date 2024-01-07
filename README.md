@@ -1,6 +1,6 @@
 
-# Posts App
-This app is based on Typescript, Express, Zod and Prisma. It uses sqlite as database.
+# REST APIs Using Typescript
+This app is based on Typescript, Express, Zod and Prisma. It uses sqlite as database. It has all the CRUD operations for post schema.
 
 ## Running the app
 Migrate database schema using below commands;
