@@ -1,4 +1,4 @@
-
+;
 # REST APIs Using Typescript
 This app is based on Typescript, Express, Zod and Prisma. It uses sqlite as database. It has all the CRUD operations for post schema.
 
@@ -10,6 +10,11 @@ npx prisma generate
 
 ```shell script
 npx prisma migrate dev
+```
+Now, postgres has been added which can be launched using docker compose;
+
+```shell script
+docker-compose up -d
 ```
 
 Launch Primsa Studio for Sqlite to see data and tables in the database
