@@ -12,7 +12,7 @@ npx prisma generate
 npx prisma migrate dev
 ```
 
-Launch Primsa Studio for Sqlite
+Launch Primsa Studio for Sqlite to see data and tables in the database
 
 ```shell script
 npx prisma studio
