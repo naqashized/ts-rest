@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+    app-pgsql:
+      image: postgres:14.1-alpine
+      container_name: app-pgsql
+      restart: always
+      environment:
+        - POSTGRES_USER=app
+        - POSTGRES_PASSWORD=app
+        - POSTGRES_DB=ts-app
+      ports:
+        - "5440:5432"
