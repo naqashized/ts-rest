@@ -1,6 +1,7 @@
 import { initContract } from '@ts-rest/core';
 import { z as zod } from 'zod';
 
+
 const c = initContract();
 
 const PostSchema = zod.object({
@@ -66,3 +67,4 @@ export const contract = c.router({
     summary: 'Delete post by id',
   }
 });
+

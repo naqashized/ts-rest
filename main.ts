@@ -4,6 +4,11 @@ import * as bodyParser from 'body-parser';
 import { createExpressEndpoints, initServer } from '@ts-rest/express';
 import {contract} from './contract';
 import { PrismaClient } from '@prisma/client'
+import {openApiDocument} from './document'
+import * as swaggerUi from 'swagger-ui-express';
+
+
+
 const express =require('express')
 const cors = require('cors')
 
@@ -58,7 +63,6 @@ const router = s.router(contract, {
     };
   },
   delete: async ({params:{id}, body}) => {
-    // const getId = id;
     const post = await prisma.post.delete({where:{id:Number.parseInt(id)}});
     const message = {"message":"Deleted"}
     return {
@@ -68,9 +72,12 @@ const router = s.router(contract, {
   },
 });
 
+app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(openApiDocument));
+
 createExpressEndpoints(contract, router, app);
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
+
