@@ -7,7 +7,9 @@ const c = initContract();
 const PostSchema = zod.object({
   id: zod.number(),
   name: zod.string(),
-  description: zod.string()
+  description: zod.string(),
+  createdAt: zod.date(),
+  updatedAt:zod.date()
 });
 
 const Message = zod.object({
